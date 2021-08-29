@@ -10,3 +10,24 @@ class Explorer:
         self.pos_y = init_y
         self.attitude = init_att
         self.instructions = instructions
+
+
+    def find_final_state(self) -> str:
+        """
+        Movimenta a sonda de acordo com as instruções
+
+        Returns:
+            str: O estado final da sonda, incluindo coordenadas e orientação
+                no formato: 'X Y Orientação'. No caso de coordenadas inválidas,
+                o retorno indica erro e o último estado registrado
+        """
+        for move in self.instructions:
+            if move.upper() == 'M':
+                try:
+                    self.move()
+                except ValueError:
+                    return (f"ERRO! Ultima coordenada registrada: "
+                            f"{self.pos_x} {self.pos_y} {self.attitude}")
+            elif move.upper() in ['L', 'R']:
+                self.update_attitude(move.upper())
+        return f"{self.pos_x} {self.pos_y} {self.attitude}"

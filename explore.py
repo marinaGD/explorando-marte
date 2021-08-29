@@ -47,21 +47,6 @@ def make_explorers(explorers_data: List[str]) -> List[dict]:
     return explorers
 
 
-def find_final_coordinate(explorer: dict) -> str:
-    """Encontra a orientação e coordenada final de uma sonda
-
-    Args:
-        explorer (dict): Dicionário contendo as chaves 'ini_pos', 'att'
-            e 'seq_mov', representando a posição inicial, a orientação inicial
-            e a sequência de movimentos, respectivamente
-
-    Returns:
-        str: Uma string no formato '{int} {int} {char}' indicando a coordenada
-            e orientação finais da sonda
-    """
-    pass
-
-
 def main(args):
     pass
 
