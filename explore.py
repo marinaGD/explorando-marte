@@ -42,7 +42,7 @@ def main(args):
 if __name__ == '__main__':
     parser = ArgumentParser()
     parser.add_argument(
-        'caminho',
+        'caminho', type=str,
         help='caminho do arquivo de texto contendo as informações '
              'do planalto e das sondas enviadas')
     main(parser.parse_args())
