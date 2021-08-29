@@ -20,11 +20,11 @@ def get_mission_info(file_path: str) -> Tuple[Tuple[int, int], List[dict]]:
     pass
 
 
-def find_final_coordinate(sonda: dict) -> str:
+def find_final_coordinate(explorer: dict) -> str:
     """Encontra a orientação e coordenada final de uma sonda
 
     Args:
-        sonda (dict): Dicionário contendo as chaves 'ini_pos' e 'seq_mov',
+        explorer (dict): Dicionário contendo as chaves 'ini_pos' e 'seq_mov',
             representando a posição inicial e sequência de movimentações,
             respectivamente
 
