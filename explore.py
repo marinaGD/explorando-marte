@@ -17,7 +17,12 @@ def get_mission_info(file_path: str) -> Tuple[Tuple[int, int], List[dict]]:
             'ini_pos' e 'seq_mov', respectivamente a posição inicial e
             sequência de movimentações de uma sonda
     """
-    pass
+    with open(file_path) as file_:
+        file_data = file_.read().splitlines()
+    rect_x, rect_y = file_data[0].split()
+    coordinate = (int(rect_x), int(rect_y))
+    explorers = make_explorers(file_data[1:])
+    return coordinate, explorers
 
 
 def find_final_coordinate(explorer: dict) -> str:
