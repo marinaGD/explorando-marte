@@ -50,10 +50,8 @@ def make_explorers(explorers_data: List[str]) -> List[Explorer]:
 
 def main(args):
     explorers = get_mission_info(args.caminho)
-    list_of_finals = []
     for explorer in explorers:
-        list_of_finals.append(explorer.find_final_state())
-    print('\n'.join(list_of_finals))
+        print(explorer.find_final_state())
 
 
 if __name__ == '__main__':
