@@ -25,6 +25,17 @@ def get_mission_info(file_path: str) -> Tuple[Tuple[int, int], List[dict]]:
     return coordinate, explorers
 
 
+def make_explorers(file_data: List[int]) -> List[dict]:
+    explorers = []
+    for index in range(0, len(file_data), 2):
+        explorer_init = file_data[index].split()
+        explorer_info = {
+            'ini_pos': (int(explorer_init[0]), int(explorer_init[1])),
+            'att': explorer_init[2],
+            'seq_mov': file_data[index+1]
+        }
+        explorers.append(explorer_info)
+    return explorers
 def find_final_coordinate(explorer: dict) -> str:
     """Encontra a orientação e coordenada final de uma sonda
 
