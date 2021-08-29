@@ -35,6 +35,25 @@ class Explorer:
             return None
         return Explorer(init_x, init_y, init_att, instructions)
 
+    def move(self):
+        """
+        Movimenta a sonda na direção atual
+
+        Raises:
+            ValueError: Quando a movimentação resulta em uma coordenada
+                inválida
+        """
+        if self.attitude == 'N':
+            self.pos_y += 1
+        elif self.attitude == 'S':
+            self.pos_y -= 1
+        elif self.attitude == 'E':
+            self.pos_x += 1
+        else:
+            self.pos_x -= 1
+        if (self.pos_x > Explorer.limit_x or self.pos_y > Explorer.limit_y
+                or self.limit_x < 0 or self.limit_y < 0):
+            raise ValueError
 
     def update_attitude(self, move: str):
         """
