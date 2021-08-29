@@ -82,7 +82,7 @@ class Explorer:
                 try:
                     self.move()
                 except ValueError:
-                    return (f"ERRO! Ultima coordenada registrada: "
+                    return (f"ERRO! Última coordenada registrada: "
                             f"{self.pos_x} {self.pos_y} {self.attitude}")
             elif move.upper() in ['L', 'R']:
                 self.update_attitude(move.upper())
