@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.9
 from argparse import ArgumentParser
 from typing import List
 from explorer import Explorer
