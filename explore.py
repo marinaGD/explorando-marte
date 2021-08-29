@@ -13,9 +13,7 @@ def get_mission_info(file_path: str) -> Tuple[Tuple[int, int], List[dict]]:
         Tuple[Tuple[int, int], List[dict]]: Uma tupla em que o primeiro
             elemento contém um par de inteiros correspondendo à coordenada do
             canto superior direito do planalto; o segundo elemento corresponde
-            a uma lista de dicionários em que cada um contém as chaves
-            'ini_pos' e 'seq_mov', respectivamente a posição inicial e
-            sequência de movimentações de uma sonda
+            a uma lista de dicionários, cada um representando uma sonda
     """
     with open(file_path) as file_:
         file_data = file_.read().splitlines()
@@ -40,9 +38,9 @@ def find_final_coordinate(explorer: dict) -> str:
     """Encontra a orientação e coordenada final de uma sonda
 
     Args:
-        explorer (dict): Dicionário contendo as chaves 'ini_pos' e 'seq_mov',
-            representando a posição inicial e sequência de movimentações,
-            respectivamente
+        explorer (dict): Dicionário contendo as chaves 'ini_pos', 'att'
+            e 'seq_mov', representando a posição inicial, a orientação inicial
+            e a sequência de movimentos, respectivamente
 
     Returns:
         str: Uma string no formato '{int} {int} {char}' indicando a coordenada
