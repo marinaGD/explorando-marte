@@ -11,6 +11,29 @@ class Explorer:
         self.attitude = init_att
         self.instructions = instructions
 
+    @classmethod
+    def create_explorer(
+            cls, init_x: int, init_y: int, init_att: str, instructions: str):
+        """
+        Valida os parâmetros de entrada e cria uma nova sonda
+
+        Args:
+            init_x (int): Posição inicial da sonda em X
+            init_y (int): Posição inicial da sonda em Y
+            init_att (str): Orientação inicial da sonda
+            instructions (str): Lista de instruções para movimentação da sonda
+
+        Returns:
+            Explorer: Retorna uma nova sonda quando os parâmetros são válidos,
+                em outro caso, retorna None
+        """
+        if (not isinstance(init_x, int) or not isinstance(init_y, int)
+                or init_x > Explorer.limit_x or init_x < 0
+                or init_y > Explorer.limit_y or init_y < 0
+                or init_att not in Explorer.directions
+                or not all(inst in ['R', 'L', 'M'] for inst in instructions)):
+            return None
+        return Explorer(init_x, init_y, init_att, instructions)
 
     def find_final_state(self) -> str:
         """
