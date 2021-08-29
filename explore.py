@@ -1,17 +1,21 @@
 from argparse import ArgumentParser
+from typing import Tuple, List
 
 
-def read_file(file_path: str) -> list[dict]:
-    """Lê informações do arquivo de entrada e retorna uma lista de dicionários
+def get_mission_info(file_path: str) -> Tuple[Tuple[int, int], List[dict]]:
+    """Extrai informações do arquivo de entrada a respeito do planalto e da sonda
 
     Args:
         file_path (str): Caminho do arquivo contendo as informações do
             planalto e das sondas enviadas
 
     Returns:
-        list[dict]: Uma lista contendo dicionários onde cada dicionário contém
-            as chaves 'ini_pos' e 'seq_mov', respectivamente a posição inicial
-            e sequência de movimentações de uma sonda
+        Tuple[Tuple[int, int], List[dict]]: Uma tupla em que o primeiro
+            elemento contém um par de inteiros correspondendo à coordenada do
+            canto superior direito do planalto; o segundo elemento corresponde
+            a uma lista de dicionários em que cada um contém as chaves
+            'ini_pos' e 'seq_mov', respectivamente a posição inicial e
+            sequência de movimentações de uma sonda
     """
     pass
 
