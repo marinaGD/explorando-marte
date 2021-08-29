@@ -35,6 +35,20 @@ class Explorer:
             return None
         return Explorer(init_x, init_y, init_att, instructions)
 
+
+    def update_attitude(self, move: str):
+        """
+        Atualiza a orientação da sonda conforme rotação
+
+        Args:
+            move (str): Movimento de rotação da sonda. Opções: 'L' ou 'R'
+        """
+        index = Explorer.directions.index(self.attitude)
+        if move == 'R':
+            self.attitude = Explorer.directions[(index+1) % 4]
+        else:
+            self.attitude = Explorer.directions[index-1]
+
     def find_final_state(self) -> str:
         """
         Movimenta a sonda de acordo com as instruções
