@@ -1,19 +1,19 @@
 from argparse import ArgumentParser
-from typing import Tuple, List
+from typing import List
+from explorer import Explorer
 
 
-def get_mission_info(file_path: str) -> Tuple[Tuple[int, int], List[dict]]:
-    """Extrai informações do arquivo de entrada a respeito do planalto e da sonda
+def get_mission_info(file_path: str) -> List[Explorer]:
+    """
+    Define os limites do planalto e extrai informações referentes às sondas do
+    arquivo de entrada
 
     Args:
         file_path (str): Caminho do arquivo contendo as informações do
             planalto e das sondas enviadas
 
     Returns:
-        Tuple[Tuple[int, int], List[dict]]: Uma tupla em que o primeiro
-            elemento contém um par de inteiros correspondendo à coordenada do
-            canto superior direito do planalto; o segundo elemento corresponde
-            a uma lista de dicionários, cada um representando uma sonda
+        List[Explorer]: Lista de objetos do tipo Explorer (sondas)
     """
     with open(file_path) as file_:
         file_data = file_.read().splitlines()
@@ -23,17 +23,16 @@ def get_mission_info(file_path: str) -> Tuple[Tuple[int, int], List[dict]]:
     return make_explorers(file_data[1:])
 
 
-def make_explorers(explorers_data: List[str]) -> List[dict]:
-    """Transforma os dados das sondas em informações
+def make_explorers(explorers_data: List[str]) -> List[Explorer]:
+    """
+    Transforma os dados das sondas em objetos sonda (Explorer)
 
     Args:
-        explorers_data (List[str]): Dados referentes às sondas extraídos
-            do arquivo inicial
+        explorers_data (List[str]): Lista com os dados de sondas extraídos do
+            arquivo de entrada
 
     Returns:
-        List[dict]: Lista de dicionários contendo as chaves 'ini_pos', 'att'
-            e 'seq_mov', representando a posição inicial, a orientação inicial
-            e a sequência de movimentos, respectivamente
+        List[Explorer]: Lista de objetos do tipo Explorer (sondas)
     """
     explorers = []
     for index in range(0, len(explorers_data), 2):
