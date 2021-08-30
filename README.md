@@ -1,21 +1,21 @@
 # Explorando Marte
-Implementação em Python3 do controle das sondas de exploração da NASA em Marte. Como proposto no desafio técnico da Xerpay.
+Implementação em Python3 do controle das sondas de exploração da NASA em Marte, como proposto no desafio técnico da Xerpay.
 
 ## Definição do Escopo
 Um conjunto de sondas foi enviado pela NASA à Marte e irá pousar num planalto que será explorado.
-A posição e direção de uma sonda são representadas por uma combinação de coordenadas x-y e uma letra representando a direção cardinal para qual a sonda aponta, seguindo a rosa dos ventos em inglês.
+A posição e direção de uma sonda são representadas por um par de coordenadas e uma letra representando a direção cardinal para qual a sonda aponta, seguindo a rosa dos ventos em inglês.
 
-O planalto é retangular e dividido numa malha para simplificar a navegação. Sendo (0, 0) as coordenadas do canto inferior esquerdo.
+O planalto é retangular e dividido numa malha para simplificar a navegação, sendo (0, 0) as coordenadas do canto inferior esquerdo.
 As letras "L", "R" e "M" são enviadas para controlar as sondas:
-- L: Vira 90° para a esquerda;
-- R: Vira 90° para a direita;
-- M: Move para a frente um ponto da malha.
+- L: Vira 90° para esquerda;
+- R: Vira 90° para direita;
+- M: Move para frente um ponto da malha.
 
-O código processa uma série dessas instruções, tratando sempre uma sonda por vez.
+O programa processa uma série dessas instruções, tratando sempre uma sonda por vez.
 
 ### Entrada
-A entrada esperada é o caminho para um arquivo de texto com informações são separadas por linhas.
-A primeira linha deve conter as coordenadas do canto superior direito do planalto separadas por um espaço. No caso de serem fornecidos mais de dois valores, os excedentes são silenciosamente ignorados.
+A entrada esperada no CLI é o caminho para um arquivo de texto com informações separadas por linhas.
+A primeira linha deve conter as coordenadas do canto superior direito do planalto separadas por um espaço. No caso de mais de dois valores serem fornecidos, os excedentes são silenciosamente ignorados.
 As demais linhas são informações das sondas. Cada sonda utiliza duas linhas, a primeira se refere ao estado inicial da sonda e a segunda à sequência de instruções que devem ser seguidas. Um exemplo de entrada é mostrado a seguir:
 
 ```
