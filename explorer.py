@@ -52,7 +52,7 @@ class Explorer:
         else:
             self.pos_x -= 1
         if (self.pos_x > Explorer.limit_x or self.pos_y > Explorer.limit_y
-                or self.limit_x < 0 or self.limit_y < 0):
+                or self.pos_x < 0 or self.pos_y < 0):
             raise ValueError
 
     def update_attitude(self, move: str):
