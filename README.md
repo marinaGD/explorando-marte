@@ -43,3 +43,7 @@ Para execução em ambiente Linux é necessário que o arquivo `main.py` seja ex
 ```
 
 ## Testes
+Foram implementados testes unitários para as funções `find_final_state()` e `set_limits()`. O seguinte comando deve ser utilizado para executá-los:
+```bash
+python3.9 -m unittest tests.TestMovingExplorer
+```
