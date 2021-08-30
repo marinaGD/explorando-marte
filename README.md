@@ -13,10 +13,9 @@ As letras "L", "R" e "M" são enviadas para controlar as sondas:
 
 O código processa uma série dessas instruções, tratando sempre uma sonda por vez.
 
-Observação: 
 ### Entrada
 A entrada esperada é o caminho para um arquivo de texto com informações são separadas por linhas.
-A primeira linha deve conter as coordenadas do canto superior direiro do planalto separadas por um espaço. 
+A primeira linha deve conter as coordenadas do canto superior direito do planalto separadas por um espaço. No caso de serem fornecidos mais de dois valores, os excedentes são silenciosamente ignorados.
 As demais linhas são informações das sondas. Cada sonda utiliza duas linhas, a primeira se refere ao estado inicial da sonda e a segunda à sequência de instruções que devem ser seguidas. Um exemplo de entrada é mostrado a seguir:
 
 ```
