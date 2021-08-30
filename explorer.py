@@ -13,7 +13,8 @@ class Explorer:
 
     @classmethod
     def set_limits(cls, args: list):
-        """Define os limites do planalto
+        """
+        Define os limites do planalto
 
         Args:
             args (list): Lista contendo os valores limites obtidos do arquivo
