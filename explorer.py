@@ -12,6 +12,19 @@ class Explorer:
         self.instructions = instructions
 
     @classmethod
+    def set_limits(cls, args):
+        try:
+            limit_x, limit_y = int(args[0]), int(args[1])
+        except ValueError:
+            raise ValueError(
+                'Os limites do retângulo devem ser números inteiros')
+        if limit_x <= 0 or limit_y <= 0:
+            raise ValueError(
+                'Os limites do retângulo devem ser maiores que zero')
+        Explorer.limit_x = limit_x
+        Explorer.limit_y = limit_y
+
+    @classmethod
     def create_explorer(
             cls, init_x: int, init_y: int, init_att: str, instructions: str):
         """
