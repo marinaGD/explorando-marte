@@ -12,7 +12,17 @@ class Explorer:
         self.instructions = instructions
 
     @classmethod
-    def set_limits(cls, args):
+    def set_limits(cls, args: list):
+        """Define os limites do planalto
+
+        Args:
+            args (list): Lista contendo os valores limites obtidos do arquivo
+                de entrada
+
+        Raises:
+            ValueError: Quando os valores limite não são maiores que 0 ou não
+                são inteiros
+        """
         try:
             limit_x, limit_y = int(args[0]), int(args[1])
         except ValueError:
