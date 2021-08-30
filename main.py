@@ -18,9 +18,7 @@ def get_mission_info(file_path: str) -> List[Explorer]:
     """
     with open(file_path) as file_:
         file_data = file_.read().splitlines()
-    rect_x, rect_y = file_data[0].split()
-    Explorer.limit_x = int(rect_x)
-    Explorer.limit_y = int(rect_y)
+    Explorer.set_limits(file_data[0].split())
     return make_explorers(file_data[1:])
 
 
@@ -50,9 +48,13 @@ def make_explorers(explorers_data: List[str]) -> List[Explorer]:
 
 
 def main(args):
-    explorers = get_mission_info(args.caminho)
-    for explorer in explorers:
-        print(explorer.find_final_state())
+    try:
+        explorers = get_mission_info(args.caminho)
+    except ValueError as e:
+        print(e)
+    else:
+        for explorer in explorers:
+            print(explorer.find_final_state())
 
 
 if __name__ == '__main__':
